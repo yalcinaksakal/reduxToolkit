@@ -1,7 +1,7 @@
 .item {
-  margin: 1rem 0;
-  background-color: #575757;
-  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #82b688;
+  padding: 0.5rem 1rem;
 }
 
 .item h3 {
@@ -55,4 +55,21 @@
 .actions button:active {
   background-color: #4b4b4b;
   color: white;
+}
+
+@media (max-width: 450px) {
+  .item header {
+    flex-direction: column;
+  }
+  .item h3,
+  .quantity span {
+    font-size: 1rem;
+  }
+  .actions button,
+  .price {
+    font-size: 0.8rem;
+  }
+  .itemprice {
+    font-size: 0.6rem;
+  }
 }

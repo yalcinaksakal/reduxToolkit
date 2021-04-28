@@ -1,6 +1,6 @@
 .products h2 {
-  color: white;
-  margin: 2rem auto;
+  margin: 2rem auto 1rem auto;
+  font-size: 1.4rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -9,4 +9,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+@media (max-width: 450px) {
+  .products h2 {
+    font-size: 1rem;
+  }
 }
