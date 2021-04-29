@@ -57,7 +57,7 @@ export const fetchCartData = () => {
     };
     try {
       const cartData = await fetchData();
-      dispatch(cartSliceActions.replaceCart(cartData));
+      if (cartData.items) dispatch(cartSliceActions.replaceCart(cartData));
     } catch (error) {
       dispatch(
         uiSliceActions.showNotification({
