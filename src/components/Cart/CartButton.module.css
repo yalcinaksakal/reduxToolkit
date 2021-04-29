@@ -17,8 +17,8 @@
 
 .badge {
   display: inline-block;
-  background-color: limegreen;
-  border: 1px solid limegreen;
+  background-color: #a2a2e2;
+  border: 1px solid #a2a2e2;
   border-radius: 30px;
   padding: 0.15rem 1.25rem;
   color: white;
