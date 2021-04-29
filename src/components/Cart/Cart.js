@@ -17,7 +17,10 @@ const Cart = props => {
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>{cartItems}</ul>
-      {totalPrice > 0 && <h2>Total Price: ${totalPrice.toFixed(2)}</h2>}
+      {numberOfItems > 0 && <h2>Total Price: ${totalPrice.toFixed(2)}</h2>}
+      <button className={classes.cartButton} onClick={props.onClose}>
+        Close
+      </button>
     </Card>
   );
 };

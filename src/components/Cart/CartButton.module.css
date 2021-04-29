@@ -16,11 +16,17 @@
 }
 
 .badge {
+  display: inline-block;
   background-color: limegreen;
   border: 1px solid limegreen;
   border-radius: 30px;
   padding: 0.15rem 1.25rem;
   color: white;
+  transition: transform 0.3s ease;
+}
+
+.added {
+  transform: scale(1.1);
 }
 
 .empty {
