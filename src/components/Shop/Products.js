@@ -4,7 +4,7 @@ import classes from "./Products.module.css";
 const Products = props => {
   return (
     <section className={classes.products}>
-      <h2>Buy your favorite products</h2>
+      <h2>products</h2>
       <ul>
         <ProductItem
           title="Book"
@@ -17,6 +17,12 @@ const Products = props => {
           price={119}
           description="Xiaomi Redmi 9"
           pId="2"
+        />
+        <ProductItem
+          title="RC Car"
+          price={39}
+          description="RC, 1:32, toy car "
+          pId="3"
         />
       </ul>
     </section>
