@@ -1,7 +1,7 @@
 .cart {
   max-width: 30rem;
-  background-color: hsl(0, 0%, 36%);
-  color: white;
+  background-color: white;
+  color: black;
   animation: appear 0.3s ease-out forwards;
   position: relative;
 }
@@ -10,13 +10,12 @@
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
-  border-color: red;
+  border: none;
   color: red;
   background: white;
   padding: 0.2rem 0.5rem;
 }
 .cartButton:hover {
-  border-color: red;
   background: red;
   color: white;
 }

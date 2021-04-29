@@ -6,7 +6,7 @@ import Overlay from "./components/UI/Overlay";
 import { uiSliceActions } from "./store/ui-slice";
 import { useEffect } from "react";
 import Notification from "./components/UI/Notification";
-import { sendCartData } from "./store/cart-slice";
+import { fetchCartData, sendCartData } from "./store/cart-actions";
 
 let isInitial = true;
 
@@ -17,17 +17,26 @@ function App() {
   const toggleHandler = () => {
     dispatch(uiSliceActions.toogle());
   };
+
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
+
   useEffect(() => {
     if (isInitial) {
       isInitial = false;
       return;
     }
-    dispatch(sendCartData(cart));
+    if (cart.changed) dispatch(sendCartData(cart));
+    const timer = setTimeout(
+      () => dispatch(uiSliceActions.resetNotification()),
+      2000
+    );
+    return () => clearTimeout(timer);
   }, [cart, dispatch]);
 
   return (
     <>
-      {notification && <Notification {...notification} />}
       <Layout>
         {cartIsVisible && (
           <>
@@ -37,6 +46,7 @@ function App() {
         )}
         <Products />
       </Layout>
+      {notification && <Notification {...notification} />}
     </>
   );
 }

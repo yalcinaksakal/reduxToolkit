@@ -10,19 +10,19 @@ const Products = props => {
           title="Book"
           price={5.99}
           description="Lord of the rings"
-          pId="1"
+          pId="p1"
         />
         <ProductItem
           title="Mobile Phone"
           price={119}
           description="Xiaomi Redmi 9"
-          pId="2"
+          pId="p2"
         />
         <ProductItem
           title="RC Car"
           price={39}
           description="RC, 1:32, toy car "
-          pId="3"
+          pId="p3"
         />
       </ul>
     </section>
