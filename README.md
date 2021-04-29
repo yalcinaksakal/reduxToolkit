@@ -1,1 +1,3 @@
 redux toolkit example
+configureStore
+createSlice

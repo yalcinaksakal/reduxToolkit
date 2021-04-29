@@ -13,6 +13,7 @@
   border-color: red;
   color: red;
   background: white;
+  padding: 0.2rem 0.5rem;
 }
 .cartButton:hover {
   border-color: red;

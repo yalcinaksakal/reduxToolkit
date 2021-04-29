@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isCartShown: false,
   items: {},
   numberOfItems: 0,
   totalPrice: 0,
@@ -39,9 +38,6 @@ const cartSlice = createSlice({
         });
         state.items = newItems;
       }
-    },
-    toogle(state) {
-      state.isCartShown = !state.isCartShown;
     },
   },
 });

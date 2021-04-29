@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import CartButton from "../Cart/CartButton";
 import classes from "./MainHeader.module.css";
-import { cartSliceActions } from "../../store/cart-slice";
+import { uiSliceActions } from "../../store/ui-slice";
 
 const MainHeader = props => {
   const { numberOfItems } = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const toggleHandler = () => {
-    dispatch(cartSliceActions.toogle());
+    dispatch(uiSliceActions.toogle());
   };
   return (
     <header className={classes.header}>

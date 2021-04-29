@@ -3,18 +3,18 @@ import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
 import { useDispatch, useSelector } from "react-redux";
 import Overlay from "./components/UI/Overlay";
-import { cartSliceActions } from "./store/cart-slice";
+import { uiSliceActions } from "./store/ui-slice";
 
 function App() {
-  const { isCartShown } = useSelector(state => state.cart);
+  const { cartIsVisible } = useSelector(state => state.ui);
 
   const dispatch = useDispatch();
   const toggleHandler = () => {
-    dispatch(cartSliceActions.toogle());
+    dispatch(uiSliceActions.toogle());
   };
   return (
     <Layout>
-      {isCartShown && (
+      {cartIsVisible && (
         <>
           <Overlay clicked={toggleHandler} />
           <Cart onClose={toggleHandler} />
