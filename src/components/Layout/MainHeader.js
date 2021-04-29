@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartButton from "../Cart/CartButton";
 import classes from "./MainHeader.module.css";
 import { cartSliceActions } from "../../store/cart-slice";
 
 const MainHeader = props => {
+  const { numberOfItems } = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const toggleHandler = () => {
     dispatch(cartSliceActions.toogle());
@@ -14,7 +15,7 @@ const MainHeader = props => {
       <nav>
         <ul>
           <li>
-            <CartButton clicked={toggleHandler} />
+            <CartButton items={numberOfItems} clicked={toggleHandler} />
           </li>
         </ul>
       </nav>

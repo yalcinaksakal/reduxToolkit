@@ -16,8 +16,15 @@
 }
 
 .badge {
-  background-color: dodgerblue;
+  background-color: limegreen;
+  border: 1px solid limegreen;
   border-radius: 30px;
   padding: 0.15rem 1.25rem;
   color: white;
+}
+
+.empty {
+  background-color: white;
+  color: black;
+  border: 1px solid red;
 }

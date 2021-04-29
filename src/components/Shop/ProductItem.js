@@ -17,7 +17,9 @@ const ProductItem = props => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button onClick={addItemHandler.bind(null, { title, price })}>
+          <button
+            onClick={addItemHandler.bind(null, { id: props.pId, title, price })}
+          >
             Add to Cart
           </button>
         </div>
