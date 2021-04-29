@@ -57,13 +57,14 @@ export const fetchCartData = () => {
     };
     try {
       const cartData = await fetchData();
-      if (cartData.items) dispatch(cartSliceActions.replaceCart(cartData));
+     
+      if (cartData?.items) dispatch(cartSliceActions.replaceCart(cartData));
     } catch (error) {
       dispatch(
         uiSliceActions.showNotification({
           status: "error",
           title: "Error",
-          message: error.message,
+          message: error.message + "sd",
         })
       );
     }
