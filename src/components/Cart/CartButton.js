@@ -1,8 +1,8 @@
-import classes from './CartButton.module.css';
+import classes from "./CartButton.module.css";
 
-const CartButton = (props) => {
+const CartButton = props => {
   return (
-    <button className={classes.button}>
+    <button onClick={props.clicked} className={classes.button}>
       <span>Cart</span>
       <span className={classes.badge}>1</span>
     </button>

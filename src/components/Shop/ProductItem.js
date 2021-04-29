@@ -1,9 +1,13 @@
-import Card from '../UI/Card';
-import classes from './ProductItem.module.css';
-
-const ProductItem = (props) => {
+import Card from "../UI/Card";
+import classes from "./ProductItem.module.css";
+import { cartSliceActions } from "../../store/cart-slice";
+import { useDispatch } from "react-redux";
+const ProductItem = props => {
   const { title, price, description } = props;
-
+  const dispacth = useDispatch();
+  const addItemHandler = item => {
+    dispacth(cartSliceActions.addItem({ item }));
+  };
   return (
     <li className={classes.item}>
       <Card>
@@ -13,7 +17,9 @@ const ProductItem = (props) => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button>Add to Cart</button>
+          <button onClick={addItemHandler.bind(null, { title, price })}>
+            Add to Cart
+          </button>
         </div>
       </Card>
     </li>
