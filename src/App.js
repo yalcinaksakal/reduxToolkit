@@ -7,6 +7,7 @@ import { uiSliceActions } from "./store/ui-slice";
 import { useEffect } from "react";
 import Notification from "./components/UI/Notification";
 import { fetchCartData, sendCartData } from "./store/cart-actions";
+import { createPortal } from "react-dom";
 
 let isInitial = true;
 
@@ -40,7 +41,11 @@ function App() {
       <Layout>
         {cartIsVisible && (
           <>
-            <Overlay clicked={toggleHandler} />
+            {createPortal(
+              <Overlay clicked={toggleHandler} />,
+              document.getElementById("overlay")
+            )}
+
             <Cart onClose={toggleHandler} />
           </>
         )}
